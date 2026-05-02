@@ -5,6 +5,6 @@ edition = "2024"
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
-reqwest = { version = "0.11", features = ["stream"] }
+reqwest = { version = "0.11", features = ["stream","multipart"] }
 clap = { version = "4.0", features = ["derive"] }
 tokio-util = { version = "0.7", features = ["io"] }
