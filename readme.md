@@ -42,6 +42,7 @@ cargo build --release
 * `-f, --file <FILE>`: Path to the local file to be uploaded.
 * `-c, --connection <NUM>`: Number of concurrent upload streams (default: 1).
 * `-H, --header "Name: Value"`: Add custom headers. This flag can be used multiple times.
+* `-F, --field <field name>`: Add body field to boundary.
 
 ### Example
 
