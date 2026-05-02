@@ -11,7 +11,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let headers = Arc::new(args.parse_headers());
     let client = args.create_client()?;
 
-    println!("--- ArchVile: Multipart Siege Mode ---");
+    println!("--- ArchVile ---");
     println!("Target URL:  {}", args.url);
     println!("File Field:  {}", args.field); 
     println!("Concurrency: {}", args.connections);
