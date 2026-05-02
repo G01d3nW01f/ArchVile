@@ -70,7 +70,7 @@ impl ArchVileArgs {
                 let stream = ReaderStream::new(file);
                 let body = reqwest::Body::wrap_stream(stream);
 
-                // create Parts declear size explicity for avoidance to clear with parse   
+                // create Parts declare size explicitly for avoidance to clear with parse   
                 let part = multipart::Part::stream_with_length(body, file_size)
                     .file_name(file_name);
                 
