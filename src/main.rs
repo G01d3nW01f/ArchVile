@@ -8,8 +8,8 @@ use tokio::sync::Semaphore;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Arc::new(ArchVileArgs::parse());
-    let headers = Arc::new(args.parse_headers());
-    let client = args.create_client()?;
+    let headers = Arc::new(args.parse_headers()); // from methods.rs 
+    let client = args.create_client()?;           // from client_methods.rs
 
     println!("--- ArchVile ---");
     println!("Target URL:  {}", args.url);
@@ -28,7 +28,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         let handle = tokio::spawn(async move {
             let _permit = sem_clone.acquire_owned().await.expect("Semaphore fail");
-            args_clone.execute_upload_loop(i, client_clone, headers_clone).await;
+            args_clone.execute_upload_loop(i, client_clone, headers_clone).await; // from client_methods.rs 
         });
 
         handles.push(handle);
