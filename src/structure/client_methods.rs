@@ -28,7 +28,7 @@ impl ArchVileArgs {
 
                 let file_name = self.file.file_name()
                     .and_then(|n| n.to_str())
-                    .unwrap_or("upload.bin")
+                    .unwrap_or("upload.file")
                     .to_string();
 
                 let stream = ReaderStream::new(file);
